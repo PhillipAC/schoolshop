@@ -1,0 +1,10 @@
+<%= date_field_tag @date %>
+<%= submit_tag %>
+
+<div id="list_orders">
+    <ol>
+    <%= @section.orders.each do |o| %>
+        <li><%= o.total_price %></li>
+    <% end %>
+    </ol>
+</div>
