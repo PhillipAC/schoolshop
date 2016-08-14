@@ -1,12 +1,12 @@
 <div class="order_info">
     <strong>Costumer: </strong>
-    <%= @order.user.name %><br>
+    <%= order.user.name %><br>
     <strong>Section:</strong>
-    <%= @order.section.name %><br>
+    <%= order.section.name %><br>
     <strong>Date:</strong>
-    <%= @order.orderDate.strftime("%m/%d/%Y")%><br>
+    <%= order.orderDate.strftime("%m/%d/%Y")%><br>
     <strong>Teacher:</strong>
-    <%= @order.teacher.name_and_number %>
+    <%= order.teacher.name_and_number %>
   
     <table border="1" class="items_ordered">
         <thead>
@@ -18,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-        <% @order.transactions.each do |t| %>
+        <% order.transactions.each do |t| %>
             <tr>
                 <td><%= t.item.name %></td>
                 <td><%= t.quantity.to_s %></td>
@@ -27,5 +27,5 @@
         <% end %>
         </tbody>
     </table>
-    Total Price: <%= @order.total_price %>
+    Total Price: <%= order.total_price %>
 </div>

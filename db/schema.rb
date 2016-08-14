@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160813182712) do
+ActiveRecord::Schema.define(version: 20160814124728) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -29,11 +29,22 @@ ActiveRecord::Schema.define(version: 20160813182712) do
     t.datetime "updated_at", null: false
     t.datetime "orderDate"
     t.string   "name"
+    t.date     "day"
   end
 
   add_index "orders", ["section_id"], name: "index_orders_on_section_id"
   add_index "orders", ["teacher_id"], name: "index_orders_on_teacher_id"
   add_index "orders", ["user_id"], name: "index_orders_on_user_id"
+
+  create_table "searches", force: :cascade do |t|
+    t.string   "customer"
+    t.date     "day"
+    t.integer  "section_id"
+    t.integer  "teacher_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean  "condense"
+  end
 
   create_table "sections", force: :cascade do |t|
     t.string   "name"

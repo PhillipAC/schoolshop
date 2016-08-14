@@ -28,6 +28,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user = current_user || User.first
     @order.name = @order.user.name
+    @order.day = @order.orderDate
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }

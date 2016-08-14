@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= render 'completedOrder'%>
+<%= render 'shared/completedOrder', :order => @order %>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

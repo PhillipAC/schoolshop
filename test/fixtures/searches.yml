@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer: MyString
+  day: 2016-08-14
+  section_id: 1
+  teacher_id: 1
+
+two:
+  customer: MyString
+  day: 2016-08-14
+  section_id: 1
+  teacher_id: 1
