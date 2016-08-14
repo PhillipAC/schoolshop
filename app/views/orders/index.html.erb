@@ -20,15 +20,17 @@
 
   <tbody>
     <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.user.name %></td>
-        <td><%= order.orderDate.strftime('%m/%d/%Y') %></td>
-        <td><%= order.section.name %></td>
-        <td><%= order.teacher.name_and_number %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if order.user == current_user or current_user.admin? %>
+        <tr>
+          <td><%= order.user.name %></td>
+          <td><%= order.orderDate.strftime('%m/%d/%Y') %></td>
+          <td><%= order.section.name %></td>
+          <td><%= order.teacher.name_and_number %></td>
+          <td><%= link_to 'Show', order %></td>
+          <td><%= link_to 'Edit', edit_order_path(order) %></td>
+          <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

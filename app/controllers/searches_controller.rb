@@ -1,4 +1,5 @@
 class SearchesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_search, only: [:show, :edit, :update, :destroy]
 
   # GET /searches

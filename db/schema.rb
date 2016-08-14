@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160814124728) do
+ActiveRecord::Schema.define(version: 20160814150356) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -81,6 +81,8 @@ ActiveRecord::Schema.define(version: 20160814124728) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.boolean  "admin"
+    t.boolean  "worker"
   end
 
 end

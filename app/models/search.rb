@@ -1,9 +1,5 @@
 class Search < ActiveRecord::Base
     
-    def condenseOrder
-        condensed(orders)
-    end
-    
     def orders
         @orders ||= find_orders
     end
@@ -18,10 +14,5 @@ class Search < ActiveRecord::Base
         orders = orders.where("day = ?", day)
         orders = orders.order("teacher_id ASC")
     end
-    
-    def condensed(orders)
-        
-    end
-    
     
 end

@@ -3,14 +3,10 @@
 <% if @search.orders.empty? %> 
   There are no orders that fit the search
 <% else %>
-  <% unless @search.condese == TRUE %>
-    The searches are below
-    <% @search.orders.each do |order| %>
-      <%= render 'shared/completedOrder', :order => order %>
-    <% end %>  
-  <% else %>
-    <%= render 'shared/condenseOrder', :orders => @search.orders %>
-  <% end %>
+  The searches are below
+  <% @search.orders.each do |order| %>
+    <%= render 'shared/completedOrder', :order => order %>
+  <% end %>  
 <% end %>
 
 <%= link_to 'Edit', edit_search_path(@search) %> |
