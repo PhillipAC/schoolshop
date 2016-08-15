@@ -14,4 +14,13 @@ class User < ActiveRecord::Base
   
   has_many :orders
   has_many :annoucements
+  
+  #Search field for orders  
+  def self.search(search)
+      if search
+          where("name LIKE ?", "%#{search}%")
+      else
+          all
+      end
+  end
 end

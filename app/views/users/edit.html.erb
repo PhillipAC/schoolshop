@@ -1,0 +1,20 @@
+<div class="centered">
+    <h2> <%= @user.name %> </h2>
+    <br>
+    <%= form_for @user, :html => {:class => "form-horizontal center"}  do |f| %>
+      <div class="field">
+        <label>Banned: </label>
+        <%= f.check_box :banned %><br>
+      </div>
+       <div class="field">
+        <label>Worker: </label>
+        <%= f.check_box :worker %>
+      </div>
+       <div class="field">
+        <label>Admin: </label>
+        <%= f.check_box :admin %>
+      </div>
+      <%= f.submit class: "btn btn-primary", data: { confirm: 'Are you sure?' } %>
+    <% end %>
+
+</div>

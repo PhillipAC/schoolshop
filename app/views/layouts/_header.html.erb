@@ -21,6 +21,8 @@
                   <li><%= link_to "New Annoucement", new_annoucement_path %></li>
                 <% end %><% if can? :create, Search %>
                   <li><%= link_to "Search", new_search_path %></li>
+                <% end %><% if can? :read, User %>
+                  <li><%= link_to "User List", users_path %></li>
                 <% end %>
                 <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
               </ul>
