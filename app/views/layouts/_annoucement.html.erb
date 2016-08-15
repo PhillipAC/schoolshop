@@ -1,0 +1,8 @@
+<div class="center jumbotron padded">
+    <h2><%= link_to annoucement.title, annoucement %></h2>
+    
+    <%= annoucement.content %>
+    
+    <hr></hr>
+    <i>Written By: <%= annoucement.user.name %> on <%= annoucement.updated_at.to_date%></i>
+</div>

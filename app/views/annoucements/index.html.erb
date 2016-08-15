@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Annoucements</h1>
+
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @annoucements.each do |annoucement| %>
+      <tr>
+        <td><%= annoucement.title %></td>
+        <td><%= annoucement.user_id %></td>
+          <% if can? :read, annoucement %>
+            <td><%= link_to 'Show', annoucement %></td>
+          <% end %><% if can? :update, annoucement %>
+            <td><%= link_to 'Edit', edit_order_path(annoucement) %></td>
+          <% end %><% if can? :destroy, annoucement %>
+            <td><%= link_to 'Destroy', annoucement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if can? :create, Annoucement %>
+  <%= link_to 'New Annoucement', new_annoucement_path %>
+<% end %>

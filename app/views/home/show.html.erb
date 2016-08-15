@@ -1,9 +1,9 @@
 <div class="row">
-<div class="col-xs-8">
+<div class="col-sm-8">
     <div class="center jumbotron">
     <h1>Welcome to New Hope High School's Coffee Shop</h1>
     <% if current_user %>
-        Now accepting orders for the coffee shop!
+        Now not accepting orders for the coffee shop!
         <br>
         <%= link_to "Order Here", new_order_path, class: "btn btn-primary" %>
     <% elsif can? :create, Order %>
@@ -17,7 +17,9 @@
     <% end %>
     </div>
 </div>
-<div class="col-xs-4">
-    Annoucments will go here when implemented
+<div class="col-sm-4">
+    <% @annoucements.each do |a| %>
+        <%= render 'layouts/annoucement', annoucement: a %>
+    <% end %>
 </div>
 </div>

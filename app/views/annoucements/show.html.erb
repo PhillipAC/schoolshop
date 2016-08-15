@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<%= render 'layouts/annoucement', :annoucement => @annoucement %>
+
+<% if can? :update, @annoucement %>
+    <%= link_to 'Edit', edit_annoucement_path(@annoucement) %> |
+<% end %>
+<%= link_to 'Back', annoucements_path %>

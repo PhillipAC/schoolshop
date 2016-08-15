@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :annoucements
   resources :searches
   resources :orders
   resources :items
