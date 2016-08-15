@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
+<div class="center">
+<h1><%= @item.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
+<%= image_tag @item.picture, size: ("200")%>
 
 <p>
   <strong>Price:</strong>
@@ -11,9 +10,10 @@
 </p>
 
 <p>
-  <strong>Description:</strong>
   <%= @item.description %>
 </p>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
+
+</div>

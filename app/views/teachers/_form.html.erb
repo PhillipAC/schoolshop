@@ -1,4 +1,4 @@
-<%= form_for(@teacher) do |f| %>
+<%= form_for(@teacher, :html => {:class => "form-horizontal center"}) do |f| %>
   <% if @teacher.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
@@ -20,6 +20,6 @@
     <%= f.number_field :room %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

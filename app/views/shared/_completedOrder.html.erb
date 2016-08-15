@@ -1,4 +1,4 @@
-<div class="order_info">
+<div class="order_info center">
     <strong>Costumer: </strong>
     <%= order.user.name %><br>
     <strong>Section:</strong>
@@ -8,7 +8,7 @@
     <strong>Teacher:</strong>
     <%= order.teacher.name_and_number %>
   
-    <table border="1" class="items_ordered">
+    <table border="1" class="items_ordered center">
         <thead>
             <tr>
                <td>Name</td>
@@ -29,3 +29,4 @@
     </table>
     Total Price: <%= order.total_price %>
 </div>
+<br>

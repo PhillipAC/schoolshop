@@ -1,4 +1,4 @@
 <div class="item_form">
     <%= f.number_field :quantity, placeholder: 0, in: 0...10 %>
-    <%= f.collection_select :item_id, Item.all, :id, :name_and_price %>
+    <%= f.collection_select :item_id, Item.all, :id, :name_and_price, include_blank: true %>
 </div>

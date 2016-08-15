@@ -1,4 +1,4 @@
-<%= form_for(@order) do |f| %>
+<%= form_for @order, :html => {:class => "form-horizontal center"}  do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -29,6 +29,7 @@
     <%= collection_select "order", "teacher_id", Teacher.all, :id, :name %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <br>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

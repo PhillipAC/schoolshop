@@ -1,3 +1,20 @@
-<h1>Make an Order!</h1>
-<br>
-<%= link_to "Order Here", new_order_path %>
+<div class="row">
+<div class="col-xs-8">
+    <div class="center jumbotron">
+    <h1>Welcome to New Hope High School's Coffee Shop</h1>
+    <% if current_user %>
+        Now accepting orders for the coffee shop!
+        <br>
+        <%= link_to "Order Here", new_order_path, class: "btn btn-primary" %>
+    <% else %>
+        To order please log into your school Gmail account below!
+        <br>
+        <%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in", 
+            class: "btn btn-primary" %>
+    <% end %>
+    </div>
+</div>
+<div class="col-xs-4">
+    Annoucments will go here when implemented
+</div>
+</div>

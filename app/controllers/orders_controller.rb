@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-    @order.user = current_user || User.first
+    @order.user = current_user
     @order.name = @order.user.name
     @order.day = @order.orderDate
     respond_to do |format|

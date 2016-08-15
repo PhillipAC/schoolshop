@@ -16,6 +16,7 @@ class Ability
       can :read, Order do |order|
         order.user == user
       end
+      can :read, Item
     end
 
   end

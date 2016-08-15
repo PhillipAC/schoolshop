@@ -1,0 +1,21 @@
+<header>
+  <div class="nav-image">
+    <%= image_tag "coffee_bean.jpg" %>
+  </div>
+  <div class="navbar navbar-inverse">
+    <div class="container">
+      <!--<%= link_to "The NHHS Coffee Shop", root_path, id: "logo" %>-->
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Home",   root_path %></li>
+          <li><%= link_to "Products",   items_url %></li>
+          <% if current_user %>
+              <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>    
+          <% else %>
+              <li><%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in" %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

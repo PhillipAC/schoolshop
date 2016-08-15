@@ -25,6 +25,11 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 # Use cancancan for roles
 gem 'cancancan', '~> 1.15'
 
+# Use bootstrap SASS as CSS Framework
+gem 'bootstrap-sass', '~> 3.2.0'
+# Helps vendor prefixes with CSS
+gem 'autoprefixer-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

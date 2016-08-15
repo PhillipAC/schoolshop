@@ -1,4 +1,4 @@
-<%= form_for(@search) do |f| %>
+<%= form_for(@search, :html => {:class => "form-horizontal center"}) do |f| %>
   <% if @search.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@search.errors.count, "error") %> prohibited this search from being saved:</h2>
@@ -28,6 +28,6 @@
     <%= f.collection_select :teacher_id, Teacher.all, :id, :name_and_number, include_blank: true %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <br><%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
