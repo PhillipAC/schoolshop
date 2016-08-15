@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>User</th>
+      <th>Author</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +15,7 @@
     <% @annoucements.each do |annoucement| %>
       <tr>
         <td><%= annoucement.title %></td>
-        <td><%= annoucement.user_id %></td>
+        <td><%= annoucement.user.name %></td>
           <% if can? :read, annoucement %>
             <td><%= link_to 'Show', annoucement %></td>
           <% end %><% if can? :update, annoucement %>

@@ -3,17 +3,19 @@
     <div class="center jumbotron">
     <h1>Welcome to New Hope High School's Coffee Shop</h1>
     <% if current_user %>
-        Now not accepting orders for the coffee shop!
-        <br>
-        <%= link_to "Order Here", new_order_path, class: "btn btn-primary" %>
-    <% elsif can? :create, Order %>
+        <% if can? :create, Order %>
+            Now not accepting orders for the coffee shop!
+            <br>
+            <%= link_to "Order Here", new_order_path, class: "btn btn-primary" %>
+        <% else %>
+            Your account has been banned from making orders. If you believe this is
+        a mistake please contact the teacher in charge of the coffee shop.
+        <% end %>
+    <% else %>
         To order please log into your school Gmail account below!
         <br>
         <%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in", 
             class: "btn btn-primary" %>
-    <% else %>
-        Your account has been banned from making orders. If you believe this is
-        a mistake please contact the teacher in charge of the coffee shop.
     <% end %>
     </div>
 </div>

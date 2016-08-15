@@ -7,6 +7,12 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.admin?
       can :manage, :all
+    elsif user.banned?
+      can :read, Order do |order|
+        order.user == user
+      end
+      can :read, Item
+      can :read, Annoucement
     elsif user.worker?
       can :manage, Annoucement
       can :manage, Search
@@ -19,6 +25,7 @@ class Ability
         order.user == user
       end
       can :read, Item
+      can :read, Annoucement
     end
 
   end
