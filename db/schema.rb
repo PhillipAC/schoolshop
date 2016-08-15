@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20160814213455) do
     t.integer  "teacher_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean  "condense"
   end
 
   create_table "sections", force: :cascade do |t|
