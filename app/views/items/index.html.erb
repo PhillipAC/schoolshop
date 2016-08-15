@@ -11,9 +11,10 @@
   <div class="row">
       <% group.each do |item| %>
         <% if item %>
-          <div class="col-sm-4 center">
+          <div class="col-sm-4 center padded">
             <%= link_to image_tag(item.picture, size: ("200")), item %><br>
             <%= link_to item.name, item, class: "center h2"%>
+            <br>
           </div>
         <% end %>
       <% end %>
@@ -22,4 +23,6 @@
 
 <br>
 
-<%= link_to 'New Item', new_item_path %>
+<% if can? :create, Item %>
+  <%= link_to 'New Item', new_item_path %>
+<% end %>

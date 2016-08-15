@@ -6,11 +6,14 @@
         Now accepting orders for the coffee shop!
         <br>
         <%= link_to "Order Here", new_order_path, class: "btn btn-primary" %>
-    <% else %>
+    <% elsif can? :create, Order %>
         To order please log into your school Gmail account below!
         <br>
         <%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in", 
             class: "btn btn-primary" %>
+    <% else %>
+        Your account has been banned from making orders. If you believe this is
+        a mistake please contact the teacher in charge of the coffee shop.
     <% end %>
     </div>
 </div>

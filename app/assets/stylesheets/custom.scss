@@ -5,6 +5,7 @@
 body {
     background-color: wheat;
     font-size: 1.5em;
+    text-align: center;
 }
 
 table.center {
@@ -53,7 +54,16 @@ textarea {
 
 /*Order Stuff*/
 .order_info{
+  text-align: left;
+  padding: 10px;
+  display: inline-block;
   background-color: white;
+  border: 3px solid;
+}
+
+/*Item Stuff*/
+.padded{
+  padding-bottom: 20px;
 }
 
 /*Footer stuff*/

@@ -10,7 +10,18 @@
           <li><%= link_to "Home",   root_path %></li>
           <li><%= link_to "Products",   items_url %></li>
           <% if current_user %>
-              <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>    
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= current_user.name %>
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <% if can? :create, Order %>
+                  <li><%= link_to "Order Here", new_order_path %></li>
+                <% end %><% if can? :create, Search %>
+                  <li><%= link_to "Search", new_search_path %></li>
+                <% end %>
+                <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+              </ul>
+            </li>
           <% else %>
               <li><%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in" %></li>
           <% end %>
